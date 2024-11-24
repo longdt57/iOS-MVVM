@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  app
+  
+*/
+
+"error_unknown_title" = "Sorry, something went wrong!";
+"error_no_internet_title" = "You are currently offline!";
+"error_unknown_message" = "There was a problem processing your request. Please try again.";
+"error_no_internet_message" = "Looks like your connection is interrupted. Check network connection and try again.";
+"loading_3_dot" = "Loading...";
+"common_close" = "Close";
+"common_ok" = "OK";
+
