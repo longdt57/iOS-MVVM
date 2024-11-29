@@ -6,5 +6,10 @@ target 'PureClean AI' do
   use_frameworks!
 
   # Pods for PureClean AI
+  pod 'Alamofire'
+  pod 'SwiftLint'
+  pod 'R.swift'
+  pod 'Resolver'
+  pod 'KeychainAccess'
 
 end
