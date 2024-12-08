@@ -14,7 +14,7 @@ extension KeychainKey {
         Keychain.Key(key: "signInInfo")
     }
     
-    static var userProfile: Keychain.Key<UserProfile> {
+    static var userProfile: Keychain.Key<User> {
         Keychain.Key(key: "userProfile")
     }
 }

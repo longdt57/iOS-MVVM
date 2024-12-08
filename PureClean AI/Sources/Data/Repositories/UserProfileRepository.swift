@@ -12,7 +12,7 @@ final class UserProfileRepository {
     @Injected var networkAPI: NetworkAPIProtocol
     @Injected var keychain: KeychainProtocol
     
-    func fetchUserProfile() async -> [User] {
-        return networkAPI.performRequest(UserConfiguration.getUsers, for: [User].self)
+    func fetchUserProfile() async throws -> [User] {
+        try await networkAPI.performRequest(UserConfiguration.getUsers, for: [User].self)
     }
 }
