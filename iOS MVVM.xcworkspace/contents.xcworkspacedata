@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/longdo/workspace/iOSTemplate/iOS MVVM.xcodeproj">
+      location = "group:iOS MVVM.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
