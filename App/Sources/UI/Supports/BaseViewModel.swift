@@ -23,6 +23,22 @@ open class BaseViewModel : ObservableObject {
         loadingState = .none
     }
     
+    func handleError(error: NetworkAPIError) {
+        switch error {
+            case .generic:
+                self.error = .common()
+                break;
+            case .dataNotFound:
+                self.error = .network()
+                break;
+        }
+        
+    }
+    
+    func hideError() {
+        error = .none
+    }
+    
     deinit {
         cancellables.forEach {
             $0.cancel()

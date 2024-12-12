@@ -9,9 +9,13 @@ import Foundation
 
 enum ErrorState {
     case none
-    case message(title: String, message: String, primaryButton: String, secondaryButton: String)
+    case message(title: String, message: String, primaryButton: String, secondaryButton: String?)
     
-//    static func common() -> ErrorState {
-//        return message(title: <#T##String#>, message: <#T##String#>, primaryButton: <#T##String#>, secondaryButton: <#T##String#>)
-//    }
+    static func common() -> ErrorState {
+        return message(title: R.string.localizable.error_unknown_title(), message: R.string.localizable.error_unknown_message(), primaryButton: R.string.localizable.common_close(), secondaryButton: nil)
+    }
+    
+    static func network() -> ErrorState {
+        return message(title: R.string.localizable.error_no_internet_title(), message: R.string.localizable.error_no_internet_message(), primaryButton: R.string.localizable.common_close(), secondaryButton: nil)
+    }
 }
