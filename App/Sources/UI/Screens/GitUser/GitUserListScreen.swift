@@ -14,11 +14,8 @@ struct GitUserListScreen: View {
     
     var body: some View {
         VStack {
-            List {
-                ForEach(viewModel.uiModel.users) { item in
-                    Text(item.login)
-                }
-            }
+            appBar()
+            userListView()
         }
         .showLoading(loadingState:  $viewModel.loading)
         .showError(error: $viewModel.error, primaryAction: {
@@ -31,9 +28,24 @@ struct GitUserListScreen: View {
         }
         .paddingRootView()
     }
+    
+    private func userListView() -> some View {
+        GitUserList(
+            users: viewModel.uiModel.users,
+            onClick: { _ in },
+            onLoadMore: { viewModel.handleAction(action: .loadMore)}
+        )
+    }
+    
+    private func appBar() -> some View {
+        return GitUserListAppBar()
+    }
+    
+    
 }
 
 #Preview {
     GitUserListScreen()
 }
+
 

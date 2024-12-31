@@ -36,7 +36,7 @@ extension GitUserConfiguration: RequestConfiguration {
     
     var parameters: Parameters? {
         switch self {
-            case .getUsers(let perPage, let since):
+            case .getUsers(let since, let perPage):
                 return [
                     "per_page": perPage,
                     "since": since

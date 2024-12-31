@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct GitUserModel : Identifiable {
+struct GitUserModel : Identifiable, Equatable {
     let id: Int64
     let login: String
     let avatarUrl: String?
