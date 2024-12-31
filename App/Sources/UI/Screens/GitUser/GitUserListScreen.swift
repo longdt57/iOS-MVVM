@@ -1,22 +1,22 @@
 //
-//  ContentView.swift
-// iOS MVVM
+//  GitUserListScreenView.swift
+//  iOS MVVM
 //
-//  Created by Long Do on 22/11/2024.
+//  Created by Long Do on 31/12/2024.
 //
 
 import SwiftUI
 import Resolver
 
-struct UserScreenView: View {
+struct GitUserListScreen: View {
     
-    @StateObject var viewModel: UserViewModel = Resolver.resolve()
+    @StateObject var viewModel: GitUserListViewModel = Resolver.resolve()
     
     var body: some View {
         VStack {
             List {
-                ForEach(viewModel.users) { item in
-                    Text(item.firstName.orEmpty())
+                ForEach(viewModel.uiModel.users) { item in
+                    Text(item.login)
                 }
             }
         }
@@ -27,12 +27,13 @@ struct UserScreenView: View {
             viewModel.onErrorSecondaryAction()
         })
         .onAppear {
-            viewModel.getUser()
+            viewModel.handleAction(action: .loadIfEmpty)
         }
         .paddingRootView()
     }
 }
 
 #Preview {
-    UserScreenView()
+    GitUserListScreen()
 }
+

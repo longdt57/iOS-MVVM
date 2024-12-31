@@ -9,7 +9,7 @@ import Foundation
 
 enum LoadingState {
     case none
-    case loading(cancellable: Bool, message: String?)
+    case loading(message: String = R.string.localizable.loading())
 }
 
 extension LoadingState {
@@ -18,7 +18,7 @@ extension LoadingState {
         switch self {
             case .none:
                 return nil
-            case .loading(_, let message):
+            case .loading(let message):
                 return message
         }
     }

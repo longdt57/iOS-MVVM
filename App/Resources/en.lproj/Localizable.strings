@@ -4,11 +4,14 @@
   
 */
 
-"error_unknown_title" = "Sorry, something went wrong!";
-"error_no_internet_title" = "You are currently offline!";
-"error_unknown_message" = "There was a problem processing your request. Please try again.";
-"error_no_internet_message" = "Looks like your connection is interrupted. Check network connection and try again.";
-"loading_3_dot" = "Loading...";
+"popup_error_unknown_title" = "Sorry, something went wrong!";
+"popup_error_timeout_title" = "Oops…Our server overloaded!";
+"popup_error_no_connection_title" = "You are currently offline!";
+"popup_error_unknown_body" = "There was a problem processing your request. Please try again.";
+"popup_error_no_connection_body" = "Looks like your connection is interrupted. Check network connection and try again.";
+"popup_error_timeout_body" = "Apologies for the inconvenience! We’ll be back soon. Please try again later.";
+"loading" = "Loading...";
 "common_close" = "Close";
 "common_ok" = "OK";
+"common_retry" = "Retry";
 

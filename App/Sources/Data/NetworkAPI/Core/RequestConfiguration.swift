@@ -47,9 +47,12 @@ extension RequestConfiguration {
     
     var encoding: ParameterEncoding {
         switch method {
-            case .post: return JSONEncoding.default
-            case .get: return JSONEncoding.default
-            default: return JSONEncoding.default
+            case .post:
+                return JSONEncoding.default
+            case .get:
+                return URLEncoding.default
+            default:
+                return JSONEncoding.default
         }
     }
 }

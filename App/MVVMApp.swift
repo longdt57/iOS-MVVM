@@ -25,7 +25,7 @@ struct MVVMApp: App {
     
     var body: some Scene {
         WindowGroup {
-            UserScreenView()
+            GitUserListScreen()
                 .environmentObject(analytics)
         }
     }

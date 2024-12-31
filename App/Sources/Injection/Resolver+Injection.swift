@@ -20,6 +20,7 @@ extension Resolver: ResolverRegistering {
         registerNetwork()
         registerRepositories()
         registerAnalytics()
+        registerDispatchQueueProvider()
     }
     
     private static func registerNetwork() {
@@ -33,14 +34,23 @@ extension Resolver: ResolverRegistering {
         register(UserRepository.self) {
             UserRepositoryImpl()
         }
+        register(GitUserRepository.self) {
+            GitUserRepositoryImpl()
+        }
+        register(GitUserDetailRepository.self) {
+            GitUserDetailRepositoryImpl()
+        }
     }
     
     private static func registerUseCases() {
         register(GetUserUseCase.self) { GetUserUseCase() }
+        register(GetGitUserUseCase.self) { GetGitUserUseCase() }
+        register(GetGitUserDetailRemoteUseCase.self) { GetGitUserDetailRemoteUseCase() }
     }
     
     private static func registerViewModel() {
         register(UserViewModel.self) { UserViewModel() }
+        register(GitUserListViewModel.self) { GitUserListViewModel() }
     }
     
     private static func registerAnalytics() {
@@ -48,5 +58,9 @@ extension Resolver: ResolverRegistering {
         register(AppAnalytics.self) {
             builder.build()
         }
+    }
+    
+    private static func registerDispatchQueueProvider() {
+        register(DispatchQueueProvider.self) { DefaultDispatchQueueProvider() }
     }
 }

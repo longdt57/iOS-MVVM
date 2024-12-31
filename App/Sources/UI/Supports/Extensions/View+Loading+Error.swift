@@ -14,7 +14,7 @@ extension View {
         let isPresenting = Binding(
             get: { if case .loading = loadingState.wrappedValue { return true } else { return false }},
             set: { isLoading in
-                loadingState.wrappedValue = isLoading ? .loading(cancellable: true, message: "") : .none
+                loadingState.wrappedValue = isLoading ? .loading() : .none
             }
         )
         
@@ -27,7 +27,7 @@ extension View {
     
     func showError(error: Binding<ErrorState>, primaryAction: (() -> Void)? = {}, secondaryAction: (() -> Void)? = {}) -> some View {
         let isPresenting = Binding(
-            get: { if case .message = error.wrappedValue { return true } else { return false }},
+            get: { if case .messageError = error.wrappedValue { return true } else { return false }},
             set: { isErrorPresent in
                 if !isErrorPresent {
                     error.wrappedValue = .none
@@ -39,21 +39,21 @@ extension View {
         return self.alert(isPresented: isPresenting) {
             switch error.wrappedValue {
                 case .none:
-                    return Alert(title: Text(""), message: nil, dismissButton: .default(Text("OK")))
+                    return Alert(title: Text(""), message: nil, dismissButton: .default(Text("")))
                     
-                case .message(title: let title, message: let message, primaryButton: let primaryButton, secondaryButton: let secondaryButton):
-                    if let secondText = secondaryButton {
+                case .messageError(messageError: let messageError):
+                    if let secondaryButton = messageError.secondaryButton {
                         return Alert(
-                            title: Text(title),
-                            message: Text(message),
-                            primaryButton: .default(Text(primaryButton), action: primaryAction),
-                            secondaryButton: .cancel(Text(secondText), action: secondaryAction)
+                            title: Text(messageError.title),
+                            message: Text(messageError.message),
+                            primaryButton: .default(Text(messageError.primaryButton), action: primaryAction),
+                            secondaryButton: .cancel(Text(secondaryButton), action: secondaryAction)
                         )
                     } else {
                         return Alert(
-                            title: Text(title),
-                            message: Text(message),
-                            dismissButton: .default(Text(primaryButton), action: primaryAction)
+                            title: Text(messageError.title),
+                            message: Text(messageError.message),
+                            dismissButton: .default(Text(messageError.primaryButton), action: primaryAction)
                         )
                     }
             }
