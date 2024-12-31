@@ -11,37 +11,40 @@ import Resolver
 struct GitUserListScreen: View {
     
     @StateObject var viewModel: GitUserListViewModel = Resolver.resolve()
+    @State private var navigationPath = NavigationPath()
     
     var body: some View {
-        VStack {
-            appBar()
-            userListView()
+        NavigationView {
+            VStack {
+                if (viewModel.uiModel.users.isEmpty.not()) {
+                    userListView()
+                } else if (viewModel.isLoading().not()) {
+                    GitUserListEmpty(onRefresh: {
+                        viewModel.handleAction(action: .loadIfEmpty)
+                    })
+                }
+            }
+            .showLoading(loadingState:  $viewModel.loading)
+            .showError(error: $viewModel.error, primaryAction: {
+                viewModel.onErrorPrimaryAction()
+            }, secondaryAction: {
+                viewModel.onErrorSecondaryAction()
+            })
+            .onAppear {
+                viewModel.handleAction(action: .loadIfEmpty)
+            }
+            .navigationTitle(R.string.localizable.git_user_list_screen_title())
+            .navigationBarTitleDisplayMode(.inline)
         }
-        .showLoading(loadingState:  $viewModel.loading)
-        .showError(error: $viewModel.error, primaryAction: {
-            viewModel.onErrorPrimaryAction()
-        }, secondaryAction: {
-            viewModel.onErrorSecondaryAction()
-        })
-        .onAppear {
-            viewModel.handleAction(action: .loadIfEmpty)
-        }
-        .paddingRootView()
     }
     
     private func userListView() -> some View {
         GitUserList(
             users: viewModel.uiModel.users,
-            onClick: { _ in },
+            onClick: { user in navigationPath.append(user.login) },
             onLoadMore: { viewModel.handleAction(action: .loadMore)}
         )
     }
-    
-    private func appBar() -> some View {
-        return GitUserListAppBar()
-    }
-    
-    
 }
 
 #Preview {

@@ -12,7 +12,6 @@ import Combine
 class GitUserListViewModel: BaseViewModel {
     
     @Injected var useCase: GetGitUserUseCase
-    @Injected var dispatchQueueProvider: DispatchQueueProvider
     
     @Published private(set) var uiModel: GitUserListUiModel = GitUserListUiModel()
     

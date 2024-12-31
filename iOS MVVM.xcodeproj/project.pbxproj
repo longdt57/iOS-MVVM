@@ -59,7 +59,6 @@
 		D14778302D0B124C008A8C4D /* ErrorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D147782F2D0B124C008A8C4D /* ErrorState.swift */; };
 		D181918A2D11723C003103D1 /* View+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18191892D11723C003103D1 /* View+Shadow.swift */; };
 		D181918C2D11827D003103D1 /* View+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D181918B2D11827D003103D1 /* View+Navigation.swift */; };
-		D181918E2D1183BB003103D1 /* View+Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D181918D2D1183BB003103D1 /* View+Padding.swift */; };
 		D18191A92D22D1BB003103D1 /* GitUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18191A82D22D1BB003103D1 /* GitUser.swift */; };
 		D18191AB2D22D1D0003103D1 /* GitUserDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18191AA2D22D1D0003103D1 /* GitUserDetail.swift */; };
 		D18191AD2D22D20F003103D1 /* GitUserConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18191AC2D22D20F003103D1 /* GitUserConfiguration.swift */; };
@@ -85,7 +84,16 @@
 		D18191DE2D23C7F0003103D1 /* GitUserListCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18191DD2D23C7F0003103D1 /* GitUserListCard.swift */; };
 		D18191E02D23C930003103D1 /* AppHorizontalDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18191DF2D23C930003103D1 /* AppHorizontalDivider.swift */; };
 		D18191E22D23C9E9003103D1 /* GitUserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18191E12D23C9E9003103D1 /* GitUserList.swift */; };
-		D18191E42D23CD57003103D1 /* GitUserListAppBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18191E32D23CD57003103D1 /* GitUserListAppBar.swift */; };
+		D18191E82D23D5DE003103D1 /* GitUserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18191E72D23D5DE003103D1 /* GitUserDetailViewModel.swift */; };
+		D18191EA2D23D616003103D1 /* GitUserDetailAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18191E92D23D616003103D1 /* GitUserDetailAction.swift */; };
+		D18191EC2D23D6E6003103D1 /* GitUserDetailUiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18191EB2D23D6E6003103D1 /* GitUserDetailUiModel.swift */; };
+		D18191F02D23DA23003103D1 /* FollowerFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18191EF2D23DA23003103D1 /* FollowerFormatter.swift */; };
+		D18191F22D23DA3A003103D1 /* GitUserDetailUiMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18191F12D23DA3A003103D1 /* GitUserDetailUiMapper.swift */; };
+		D18191F42D23DC0C003103D1 /* GitUserDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18191F32D23DC0C003103D1 /* GitUserDetailScreen.swift */; };
+		D18191F62D23DDB6003103D1 /* GitUserDetailCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18191F52D23DDB6003103D1 /* GitUserDetailCard.swift */; };
+		D18191F82D23DE8F003103D1 /* GitUserDetailBlog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18191F72D23DE8F003103D1 /* GitUserDetailBlog.swift */; };
+		D18191FA2D23DF4C003103D1 /* GitUserDetailFollows.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18191F92D23DF4C003103D1 /* GitUserDetailFollows.swift */; };
+		D18191FC2D23DFEE003103D1 /* GitUserDetailLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18191FB2D23DFEE003103D1 /* GitUserDetailLocation.swift */; };
 		D1A6B1012CF0AC3B00574312 /* MVVMApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A6B1002CF0AC3B00574312 /* MVVMApp.swift */; };
 		D1A6B1032CF0AC3B00574312 /* UserScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A6B1022CF0AC3B00574312 /* UserScreenView.swift */; };
 		D1A6B1052CF0AC3C00574312 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1A6B1042CF0AC3C00574312 /* Assets.xcassets */; };
@@ -160,7 +168,6 @@
 		D147782F2D0B124C008A8C4D /* ErrorState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorState.swift; sourceTree = "<group>"; };
 		D18191892D11723C003103D1 /* View+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Shadow.swift"; sourceTree = "<group>"; };
 		D181918B2D11827D003103D1 /* View+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Navigation.swift"; sourceTree = "<group>"; };
-		D181918D2D1183BB003103D1 /* View+Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Padding.swift"; sourceTree = "<group>"; };
 		D18191A82D22D1BB003103D1 /* GitUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitUser.swift; sourceTree = "<group>"; };
 		D18191AA2D22D1D0003103D1 /* GitUserDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitUserDetail.swift; sourceTree = "<group>"; };
 		D18191AC2D22D20F003103D1 /* GitUserConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitUserConfiguration.swift; sourceTree = "<group>"; };
@@ -186,7 +193,16 @@
 		D18191DD2D23C7F0003103D1 /* GitUserListCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitUserListCard.swift; sourceTree = "<group>"; };
 		D18191DF2D23C930003103D1 /* AppHorizontalDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHorizontalDivider.swift; sourceTree = "<group>"; };
 		D18191E12D23C9E9003103D1 /* GitUserList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitUserList.swift; sourceTree = "<group>"; };
-		D18191E32D23CD57003103D1 /* GitUserListAppBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitUserListAppBar.swift; sourceTree = "<group>"; };
+		D18191E72D23D5DE003103D1 /* GitUserDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitUserDetailViewModel.swift; sourceTree = "<group>"; };
+		D18191E92D23D616003103D1 /* GitUserDetailAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitUserDetailAction.swift; sourceTree = "<group>"; };
+		D18191EB2D23D6E6003103D1 /* GitUserDetailUiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitUserDetailUiModel.swift; sourceTree = "<group>"; };
+		D18191EF2D23DA23003103D1 /* FollowerFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerFormatter.swift; sourceTree = "<group>"; };
+		D18191F12D23DA3A003103D1 /* GitUserDetailUiMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitUserDetailUiMapper.swift; sourceTree = "<group>"; };
+		D18191F32D23DC0C003103D1 /* GitUserDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitUserDetailScreen.swift; sourceTree = "<group>"; };
+		D18191F52D23DDB6003103D1 /* GitUserDetailCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitUserDetailCard.swift; sourceTree = "<group>"; };
+		D18191F72D23DE8F003103D1 /* GitUserDetailBlog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitUserDetailBlog.swift; sourceTree = "<group>"; };
+		D18191F92D23DF4C003103D1 /* GitUserDetailFollows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitUserDetailFollows.swift; sourceTree = "<group>"; };
+		D18191FB2D23DFEE003103D1 /* GitUserDetailLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitUserDetailLocation.swift; sourceTree = "<group>"; };
 		D1A6B0FD2CF0AC3B00574312 /* iOS MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS MVVM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1A6B1002CF0AC3B00574312 /* MVVMApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMApp.swift; sourceTree = "<group>"; };
 		D1A6B1022CF0AC3B00574312 /* UserScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserScreenView.swift; sourceTree = "<group>"; };
@@ -411,7 +427,6 @@
 				D12792B72D0D7550000F7C1E /* View+Loading+Error.swift */,
 				D18191892D11723C003103D1 /* View+Shadow.swift */,
 				D181918B2D11827D003103D1 /* View+Navigation.swift */,
-				D181918D2D1183BB003103D1 /* View+Padding.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -529,6 +544,7 @@
 		D14778262D0B0B31008A8C4D /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				D18191ED2D23D9F5003103D1 /* Mapper */,
 				D18191CF2D23C0A3003103D1 /* Components */,
 				D18191C12D23734D003103D1 /* Models */,
 				D147782A2D0B0B82008A8C4D /* Supports */,
@@ -540,6 +556,7 @@
 		D14778272D0B0B57008A8C4D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				D18191E52D23D5C7003103D1 /* GitUserDetail */,
 				D18191BE2D237316003103D1 /* GitUser */,
 				D12792B22D0D355E000F7C1E /* User */,
 			);
@@ -583,6 +600,7 @@
 			isa = PBXGroup;
 			children = (
 				D18191C22D23A972003103D1 /* GitUserListUiModel.swift */,
+				D18191EB2D23D6E6003103D1 /* GitUserDetailUiModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -623,9 +641,47 @@
 				D18191DB2D23C68C003103D1 /* GitUserListItem.swift */,
 				D18191DD2D23C7F0003103D1 /* GitUserListCard.swift */,
 				D18191E12D23C9E9003103D1 /* GitUserList.swift */,
-				D18191E32D23CD57003103D1 /* GitUserListAppBar.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		D18191E52D23D5C7003103D1 /* GitUserDetail */ = {
+			isa = PBXGroup;
+			children = (
+				D18191E62D23D5CF003103D1 /* Components */,
+				D18191E72D23D5DE003103D1 /* GitUserDetailViewModel.swift */,
+				D18191E92D23D616003103D1 /* GitUserDetailAction.swift */,
+				D18191F32D23DC0C003103D1 /* GitUserDetailScreen.swift */,
+			);
+			path = GitUserDetail;
+			sourceTree = "<group>";
+		};
+		D18191E62D23D5CF003103D1 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D18191F52D23DDB6003103D1 /* GitUserDetailCard.swift */,
+				D18191F72D23DE8F003103D1 /* GitUserDetailBlog.swift */,
+				D18191F92D23DF4C003103D1 /* GitUserDetailFollows.swift */,
+				D18191FB2D23DFEE003103D1 /* GitUserDetailLocation.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		D18191ED2D23D9F5003103D1 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				D18191EE2D23DA09003103D1 /* Util */,
+				D18191F12D23DA3A003103D1 /* GitUserDetailUiMapper.swift */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
+		D18191EE2D23DA09003103D1 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				D18191EF2D23DA23003103D1 /* FollowerFormatter.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		D1A6B0F42CF0AC3B00574312 = {
@@ -873,16 +929,17 @@
 				D18191CA2D23B96F003103D1 /* DefaultDispatchQueueProvider.swift in Sources */,
 				D14778302D0B124C008A8C4D /* ErrorState.swift in Sources */,
 				8F8943D12CF4726F00F299DD /* UserRepositoryImpl.swift in Sources */,
+				D18191EC2D23D6E6003103D1 /* GitUserDetailUiModel.swift in Sources */,
 				D18191B12D22D2DB003103D1 /* GitUserDetailRepositoryImpl.swift in Sources */,
 				8F8943C82CF4478C00F299DD /* UserDefaultKeys.swift in Sources */,
 				D1A6B1032CF0AC3B00574312 /* UserScreenView.swift in Sources */,
 				D12792E12D0E5316000F7C1E /* Analytic+Const.swift in Sources */,
 				D147782E2D0B118F008A8C4D /* LoadingState.swift in Sources */,
-				D181918E2D1183BB003103D1 /* View+Padding.swift in Sources */,
 				D12792E42D0E5316000F7C1E /* AnalyticsEvent.swift in Sources */,
 				8FB63A842CF438C1008D8F39 /* NetworkAPIProtocol.swift in Sources */,
 				D18191C52D23A9E6003103D1 /* GitUserListAction.swift in Sources */,
 				D18191B52D22D42C003103D1 /* GitUserDetailModel.swift in Sources */,
+				D18191F22D23DA3A003103D1 /* GitUserDetailUiMapper.swift in Sources */,
 				8F8943B32CF4450500F299DD /* KeychainKey.swift in Sources */,
 				D14778222D0B0631008A8C4D /* UseCase.swift in Sources */,
 				8F8943CB2CF447E500F299DD /* Resolver+Injection.swift in Sources */,
@@ -897,6 +954,7 @@
 				D18191A92D22D1BB003103D1 /* GitUser.swift in Sources */,
 				8F8943C32CF4472800F299DD /* JSONDecoder.swift in Sources */,
 				D18191D52D23C51A003103D1 /* LinkText.swift in Sources */,
+				D18191EA2D23D616003103D1 /* GitUserDetailAction.swift in Sources */,
 				D18191B32D22D342003103D1 /* GitUserModel.swift in Sources */,
 				D18191E22D23C9E9003103D1 /* GitUserList.swift in Sources */,
 				8FB63A922CF43FA6008D8F39 /* HttpUrlConnection.swift in Sources */,
@@ -907,22 +965,26 @@
 				D14778202D0B05AC008A8C4D /* UserRepository.swift in Sources */,
 				D12792DE2D0E5316000F7C1E /* FirebaseAnalyticClient.swift in Sources */,
 				8F8943BB2CF446E700F299DD /* BoolExtension.swift in Sources */,
+				D18191FA2D23DF4C003103D1 /* GitUserDetailFollows.swift in Sources */,
+				D18191F02D23DA23003103D1 /* FollowerFormatter.swift in Sources */,
 				D12792AD2D0B27AE000F7C1E /* TypeAlias.swift in Sources */,
 				D147782C2D0B0ED2008A8C4D /* BaseViewModel.swift in Sources */,
 				D18191BB2D22D5CF003103D1 /* GetGitUserUseCase.swift in Sources */,
 				D14778252D0B0651008A8C4D /* GetUserUseCase.swift in Sources */,
+				D18191F42D23DC0C003103D1 /* GitUserDetailScreen.swift in Sources */,
 				D12792CA2D0E4EBD000F7C1E /* View+Divider.swift in Sources */,
 				D18191DA2D23C62B003103D1 /* GitUserListEmpty.swift in Sources */,
 				8F8943C12CF4471900F299DD /* IntExtension.swift in Sources */,
 				D12792E32D0E5316000F7C1E /* AnalyticsClientType.swift in Sources */,
 				8F8943BD2CF446FC00F299DD /* DateFormatter.swift in Sources */,
 				8FB63A812CF43833008D8F39 /* NetworkAPI.swift in Sources */,
+				D18191FC2D23DFEE003103D1 /* GitUserDetailLocation.swift in Sources */,
 				D12792E22D0E5316000F7C1E /* AnalyticClient.swift in Sources */,
 				D18191CC2D23BA5B003103D1 /* GitUserListScreen.swift in Sources */,
 				D12792E52D0E5316000F7C1E /* AppAnalytics.swift in Sources */,
 				8F8943CE2CF470C700F299DD /* UserConfiguration.swift in Sources */,
 				D18191AB2D22D1D0003103D1 /* GitUserDetail.swift in Sources */,
-				D18191E42D23CD57003103D1 /* GitUserListAppBar.swift in Sources */,
+				D18191E82D23D5DE003103D1 /* GitUserDetailViewModel.swift in Sources */,
 				8F8943B12CF444E900F299DD /* Keychain.swift in Sources */,
 				D18191DC2D23C68C003103D1 /* GitUserListItem.swift in Sources */,
 				D181918C2D11827D003103D1 /* View+Navigation.swift in Sources */,
@@ -930,11 +992,13 @@
 				D18191D12D23C0B2003103D1 /* UserAvatar.swift in Sources */,
 				D18191DE2D23C7F0003103D1 /* GitUserListCard.swift in Sources */,
 				D12792B12D0B2A99000F7C1E /* R.generated.swift in Sources */,
+				D18191F62D23DDB6003103D1 /* GitUserDetailCard.swift in Sources */,
 				D18191BD2D22D688003103D1 /* GetGitUserDetailRemoteUseCase.swift in Sources */,
 				8F8943C52CF4473A00F299DD /* StringExtension.swift in Sources */,
 				D181918A2D11723C003103D1 /* View+Shadow.swift in Sources */,
 				D18191C82D23B952003103D1 /* DispatchQueueProvider.swift in Sources */,
 				8F8943B82CF4468700F299DD /* User.swift in Sources */,
+				D18191F82D23DE8F003103D1 /* GitUserDetailBlog.swift in Sources */,
 				D14778292D0B0B6F008A8C4D /* UserViewModel.swift in Sources */,
 				8F8943D32CF472EF00F299DD /* TokenInfo.swift in Sources */,
 				D12792C52D0E4EBD000F7C1E /* Color+UIColor.swift in Sources */,

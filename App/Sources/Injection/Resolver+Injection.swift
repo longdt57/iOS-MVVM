@@ -21,6 +21,7 @@ extension Resolver: ResolverRegistering {
         registerRepositories()
         registerAnalytics()
         registerDispatchQueueProvider()
+        registerMappers()
     }
     
     private static func registerNetwork() {
@@ -51,6 +52,7 @@ extension Resolver: ResolverRegistering {
     private static func registerViewModel() {
         register(UserViewModel.self) { UserViewModel() }
         register(GitUserListViewModel.self) { GitUserListViewModel() }
+        register(GitUserDetailViewModel.self) { GitUserDetailViewModel() }
     }
     
     private static func registerAnalytics() {
@@ -62,5 +64,9 @@ extension Resolver: ResolverRegistering {
     
     private static func registerDispatchQueueProvider() {
         register(DispatchQueueProvider.self) { DefaultDispatchQueueProvider() }
+    }
+    
+    private static func registerMappers() {
+        register(GitUserDetailUiMapper.self) { GitUserDetailUiMapperImpl() }
     }
 }

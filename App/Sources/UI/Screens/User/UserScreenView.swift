@@ -29,7 +29,7 @@ struct UserScreenView: View {
         .onAppear {
             viewModel.getUser()
         }
-        .paddingRootView()
+        .padding(.top, 0.5)
     }
 }
 

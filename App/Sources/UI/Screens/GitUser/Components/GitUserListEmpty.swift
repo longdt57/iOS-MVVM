@@ -13,13 +13,12 @@ struct GitUserListEmpty: View {
     var body: some View {
         VStack {
             Button(action: onRefresh) {
-                Text("Retry") // Similar to stringResource(id = R.string.common_retry) in Compose
+                Text(R.string.localizable.common_retry())
                     .font(.title2)
                     .foregroundColor(.blue) // You can customize this color
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity) // Center the content
-        .background(Color.gray.opacity(0.1)) // Optional background for better visibility
     }
 }
 

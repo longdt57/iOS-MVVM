@@ -37,6 +37,7 @@ struct GitUserTitle: View {
         Text(title)
             .font(.title2)
             .fontWeight(.semibold)
+            .foregroundColor(.black)
     }
 }
 

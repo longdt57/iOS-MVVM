@@ -19,9 +19,6 @@ struct GitUserListCard: View {
                 htmlUrl: user.htmlUrl
             )
             .padding(12)
-            .onTapGesture {
-                onClick(user)
-            }
         }
     }
 }

@@ -18,14 +18,18 @@ struct GitUserList: View {
         ScrollView {
             LazyVStack(spacing: 10) {  // Use LazyVStack instead of VStack
                 ForEach(users) { user in
-                    GitUserListCard(user: user, onClick: onClick)
-                        .onAppear {
-                            if user == users.last {
-                                // Trigger load more when the last item appears
-                                onLoadMore()
+                    NavigationLink(destination: {
+                        GitUserDetailScreen(login: user.login)
+                    },label: {
+                        GitUserListCard(user: user, onClick: onClick)
+                            .onAppear {
+                                if user == users.last {
+                                    // Trigger load more when the last item appears
+                                    onLoadMore()
+                                }
                             }
-                        }
-                        .padding(.horizontal)
+                            .padding(.horizontal)
+                    })
                 }
                 Spacer().frame(height: 16)
             }

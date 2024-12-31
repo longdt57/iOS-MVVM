@@ -24,7 +24,7 @@ extension View {
     
     public func navigationBarItemBack(action: @escaping () -> Void) -> some View {
         self.navigationBarItems(leading: Button(action: action) {
-            Image(R.image.iconBack.name)
+            Image(systemName: "chevron.left")
         })
     }
     
@@ -37,7 +37,10 @@ extension View {
     func toolbarTitle(_ text: String) -> some View {
         self.toolbar {
             ToolbarItem(placement: .principal) {
-                Text(text).frame(maxWidth: .infinity)
+                Text(text)
+                    .font(.title2)
+                    .fontWeight(.semibold)
+                    .frame(maxWidth: .infinity, maxHeight: 48, alignment: .center)
             }
         }
     }

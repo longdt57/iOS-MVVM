@@ -7,8 +7,11 @@
 
 import Combine
 import Foundation
+import Resolver
 
 open class BaseViewModel : ObservableObject {
+    
+    @Injected var dispatchQueueProvider: DispatchQueueProvider
     
     @Published var loading: LoadingState = .none
     @Published var error: ErrorState = .none
@@ -59,5 +62,18 @@ open class BaseViewModel : ObservableObject {
         cancellables.forEach {
             $0.cancel()
         }
+    }
+}
+
+extension BaseViewModel {
+    
+    func handleCompletion(completion: Subscribers.Completion<Error>) {
+        switch completion {
+            case .finished:
+                break
+            case .failure(let error):
+                handleError(error: error)
+        }
+        hideLoading()
     }
 }
