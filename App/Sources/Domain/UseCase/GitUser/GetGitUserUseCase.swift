@@ -18,8 +18,14 @@ class GetGitUserUseCase {
         return Future { promise in
             Task {
                 do {
-                    let result = try await self.repository.getRemote(since: since, perPage: perPage)
-                    promise(.success(result))  // Fulfill the promise with success
+                    let localUsers = try await self.repository.getLocal(since: since, perPage: perPage)
+                    if (localUsers.isEmpty.not()) {
+                        promise(.success(localUsers))
+                        return
+                    } else {
+                        let result = try await self.repository.getRemote(since: since, perPage: perPage)
+                        promise(.success(result))  // Fulfill the promise with success
+                    }
                 } catch {
                     promise(.failure(error))  // Fulfill the promise with failure
                 }

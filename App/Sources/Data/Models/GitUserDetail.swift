@@ -6,16 +6,18 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct GitUserDetail: Codable {
-    let id: Int64
-    let login: String
-    let name: String?
-    let avatarUrl: String?
-    let blog: String?
-    let location: String?
-    let followers: Int?
-    let following: Int?
+final class GitUserDetail: Object, Codable {
+    
+    @Persisted(primaryKey: true) var id: Int64
+    @Persisted var login: String
+    @Persisted var name: String?
+    @Persisted var avatarUrl: String?
+    @Persisted var blog: String?
+    @Persisted var location: String?
+    @Persisted var followers: Int?
+    @Persisted var following: Int?
     
     enum CodingKeys: String, CodingKey {
         case id

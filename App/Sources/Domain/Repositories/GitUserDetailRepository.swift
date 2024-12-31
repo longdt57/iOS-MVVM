@@ -9,4 +9,5 @@ import Foundation
 
 protocol GitUserDetailRepository {
     func getRemote(userName: String) async throws -> GitUserDetailModel
+    func getLocal(userName: String) async throws -> GitUserDetailModel?
 }

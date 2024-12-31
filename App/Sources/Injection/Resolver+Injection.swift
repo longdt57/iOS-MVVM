@@ -18,6 +18,7 @@ extension Resolver: ResolverRegistering {
         registerViewModel()
         registerUseCases()
         registerNetwork()
+        registerLocalSource()
         registerRepositories()
         registerAnalytics()
         registerDispatchQueueProvider()
@@ -31,22 +32,22 @@ extension Resolver: ResolverRegistering {
         }
     }
     
+    private static func registerLocalSource() {
+        register(GitUserLocalSource.self) { GitUserLocalSource() }
+        register(GitUserDetailLocalSource.self) { GitUserDetailLocalSource() }
+    }
+    
     private static func registerRepositories() {
-        register(UserRepository.self) {
-            UserRepositoryImpl()
-        }
-        register(GitUserRepository.self) {
-            GitUserRepositoryImpl()
-        }
-        register(GitUserDetailRepository.self) {
-            GitUserDetailRepositoryImpl()
-        }
+        register(UserRepository.self) { UserRepositoryImpl() }
+        register(GitUserRepository.self) { GitUserRepositoryImpl() }
+        register(GitUserDetailRepository.self) { GitUserDetailRepositoryImpl() }
     }
     
     private static func registerUseCases() {
         register(GetUserUseCase.self) { GetUserUseCase() }
         register(GetGitUserUseCase.self) { GetGitUserUseCase() }
         register(GetGitUserDetailRemoteUseCase.self) { GetGitUserDetailRemoteUseCase() }
+        register(GetGitUserDetailLocalUseCase.self) { GetGitUserDetailLocalUseCase() }
     }
     
     private static func registerViewModel() {
@@ -56,10 +57,7 @@ extension Resolver: ResolverRegistering {
     }
     
     private static func registerAnalytics() {
-        let builder = AppAnalytics.Builder()
-        register(AppAnalytics.self) {
-            builder.build()
-        }
+        register(AppAnalytics.self) { AppAnalytics.Builder().build() }
     }
     
     private static func registerDispatchQueueProvider() {

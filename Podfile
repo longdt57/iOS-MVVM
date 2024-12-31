@@ -18,5 +18,6 @@ target 'iOS MVVM' do
   pod 'AmplitudeSwift'
   pod 'FirebaseAnalytics'
   pod 'FirebaseCrashlytics'
+  pod 'RealmSwift'
 
 end

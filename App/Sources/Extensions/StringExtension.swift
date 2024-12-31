@@ -18,6 +18,10 @@ public extension Optional where Wrapped == String {
     func ifNil(defaultValue: () -> String) -> String {
         return self ?? defaultValue()
     }
+    
+    func ifNilOrBlank(defaultValue: () -> String) -> String {
+        return self.isNilOrBlank() ? defaultValue() : self!
+    }
 
     func isNilOrEmpty() -> Bool {
         return self?.isEmpty ?? true

@@ -14,6 +14,7 @@ class GitUserDetailViewModel : BaseViewModel {
     @Published var uiModel = GitUserDetailUiModel()
     
     @Injected var getRemoteUseCase: GetGitUserDetailRemoteUseCase
+    @Injected var getLocalUseCase: GetGitUserDetailLocalUseCase
     @Injected var gitUserDetailUiMapper: GitUserDetailUiMapper
     
     func handleAction(action: GitUserDetailAction) {
@@ -24,7 +25,16 @@ class GitUserDetailViewModel : BaseViewModel {
     }
     
     private func getLocal() {
-        // Todo Implement
+        getLocalUseCase.invoke(userName: getLogin())
+            .receive(on: dispatchQueueProvider.backgroundQueue)
+            .sink(
+                receiveCompletion: { [weak self] completion in
+                    self?.handleCompletion(completion: completion)
+                },
+                receiveValue: { [weak self] result in
+                    self?.handleSuccess(result: result)
+                })
+            .store(in: &cancellables)
     }
     
     private func fetchRemote() {
@@ -45,12 +55,20 @@ class GitUserDetailViewModel : BaseViewModel {
     
     private func setUserLogin(_ login: String) {
         uiModel.login = login
-        // getLocal()
-        fetchRemote()
+        getLocal()
+        fetchRemote() // Refresh data from api
     }
     
     private func handleSuccess(result: GitUserDetailModel) {
         self.uiModel = gitUserDetailUiMapper.mapToUiModel(oldUiModel: uiModel, model: result)
+    }
+    
+    override func handleError(error: any Error) {
+        if (isDataEmpty()) {
+            super.handleError(error: error)
+        } else {
+            Log.error(error)
+        }
     }
     
     private func isDataEmpty() -> Bool {

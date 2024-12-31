@@ -94,6 +94,9 @@
 		D18191F82D23DE8F003103D1 /* GitUserDetailBlog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18191F72D23DE8F003103D1 /* GitUserDetailBlog.swift */; };
 		D18191FA2D23DF4C003103D1 /* GitUserDetailFollows.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18191F92D23DF4C003103D1 /* GitUserDetailFollows.swift */; };
 		D18191FC2D23DFEE003103D1 /* GitUserDetailLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18191FB2D23DFEE003103D1 /* GitUserDetailLocation.swift */; };
+		D18192042D241D63003103D1 /* GitUserLocalSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18192032D241D63003103D1 /* GitUserLocalSource.swift */; };
+		D18192062D24265F003103D1 /* GitUserDetailLocalSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18192052D24265F003103D1 /* GitUserDetailLocalSource.swift */; };
+		D18192082D2427DC003103D1 /* GetGitUserDetailLocalUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18192072D2427DC003103D1 /* GetGitUserDetailLocalUseCase.swift */; };
 		D1A6B1012CF0AC3B00574312 /* MVVMApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A6B1002CF0AC3B00574312 /* MVVMApp.swift */; };
 		D1A6B1032CF0AC3B00574312 /* UserScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A6B1022CF0AC3B00574312 /* UserScreenView.swift */; };
 		D1A6B1052CF0AC3C00574312 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1A6B1042CF0AC3C00574312 /* Assets.xcassets */; };
@@ -203,6 +206,9 @@
 		D18191F72D23DE8F003103D1 /* GitUserDetailBlog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitUserDetailBlog.swift; sourceTree = "<group>"; };
 		D18191F92D23DF4C003103D1 /* GitUserDetailFollows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitUserDetailFollows.swift; sourceTree = "<group>"; };
 		D18191FB2D23DFEE003103D1 /* GitUserDetailLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitUserDetailLocation.swift; sourceTree = "<group>"; };
+		D18192032D241D63003103D1 /* GitUserLocalSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitUserLocalSource.swift; sourceTree = "<group>"; };
+		D18192052D24265F003103D1 /* GitUserDetailLocalSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitUserDetailLocalSource.swift; sourceTree = "<group>"; };
+		D18192072D2427DC003103D1 /* GetGitUserDetailLocalUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGitUserDetailLocalUseCase.swift; sourceTree = "<group>"; };
 		D1A6B0FD2CF0AC3B00574312 /* iOS MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS MVVM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1A6B1002CF0AC3B00574312 /* MVVMApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMApp.swift; sourceTree = "<group>"; };
 		D1A6B1022CF0AC3B00574312 /* UserScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserScreenView.swift; sourceTree = "<group>"; };
@@ -253,6 +259,7 @@
 		8F8943AE2CF444DD00F299DD /* Local */ = {
 			isa = PBXGroup;
 			children = (
+				D18192022D241D5B003103D1 /* Realm */,
 				8F8943C62CF4478400F299DD /* UserDefaults+Key */,
 				8F8943AF2CF444E400F299DD /* Keychain */,
 			);
@@ -619,6 +626,7 @@
 			children = (
 				D18191BA2D22D5CF003103D1 /* GetGitUserUseCase.swift */,
 				D18191BC2D22D688003103D1 /* GetGitUserDetailRemoteUseCase.swift */,
+				D18192072D2427DC003103D1 /* GetGitUserDetailLocalUseCase.swift */,
 			);
 			path = GitUser;
 			sourceTree = "<group>";
@@ -682,6 +690,15 @@
 				D18191EF2D23DA23003103D1 /* FollowerFormatter.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		D18192022D241D5B003103D1 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				D18192032D241D63003103D1 /* GitUserLocalSource.swift */,
+				D18192052D24265F003103D1 /* GitUserDetailLocalSource.swift */,
+			);
+			path = Realm;
 			sourceTree = "<group>";
 		};
 		D1A6B0F42CF0AC3B00574312 = {
@@ -926,6 +943,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D18191B92D22D4F8003103D1 /* GitUserDetailRepository.swift in Sources */,
+				D18192082D2427DC003103D1 /* GetGitUserDetailLocalUseCase.swift in Sources */,
 				D18191CA2D23B96F003103D1 /* DefaultDispatchQueueProvider.swift in Sources */,
 				D14778302D0B124C008A8C4D /* ErrorState.swift in Sources */,
 				8F8943D12CF4726F00F299DD /* UserRepositoryImpl.swift in Sources */,
@@ -944,6 +962,7 @@
 				D14778222D0B0631008A8C4D /* UseCase.swift in Sources */,
 				8F8943CB2CF447E500F299DD /* Resolver+Injection.swift in Sources */,
 				D18191AD2D22D20F003103D1 /* GitUserConfiguration.swift in Sources */,
+				D18192062D24265F003103D1 /* GitUserDetailLocalSource.swift in Sources */,
 				8FB63A902CF43F83008D8F39 /* HTTPHeader.swift in Sources */,
 				D12792E92D0EBC17000F7C1E /* BuildConfig.swift in Sources */,
 				D12792B82D0D7550000F7C1E /* View+Loading+Error.swift in Sources */,
@@ -967,6 +986,7 @@
 				8F8943BB2CF446E700F299DD /* BoolExtension.swift in Sources */,
 				D18191FA2D23DF4C003103D1 /* GitUserDetailFollows.swift in Sources */,
 				D18191F02D23DA23003103D1 /* FollowerFormatter.swift in Sources */,
+				D18192042D241D63003103D1 /* GitUserLocalSource.swift in Sources */,
 				D12792AD2D0B27AE000F7C1E /* TypeAlias.swift in Sources */,
 				D147782C2D0B0ED2008A8C4D /* BaseViewModel.swift in Sources */,
 				D18191BB2D22D5CF003103D1 /* GetGitUserUseCase.swift in Sources */,

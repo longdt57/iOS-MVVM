@@ -18,7 +18,7 @@ class GitUserDetailUiMapperImpl: GitUserDetailUiMapper {
             name: model.name ?? model.login,
             avatarUrl: model.avatarUrl.orEmpty(),
             blog: model.blog.orEmpty(),
-            location: model.location?.ifBlank(defaultValue: {R.string.localizable.not_set()}),
+            location: model.location.ifNil(defaultValue: { R.string.localizable.not_set() }),
             followers: FollowerFormatter.formatLargeNumber(value: model.followers),
             following: FollowerFormatter.formatLargeNumber(value: model.following)
         )
